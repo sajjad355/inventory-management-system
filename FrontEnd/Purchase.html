@@ -1,0 +1,420 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Purchase</title>
+    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+    <script>
+	if(sessionStorage.getItem("userName")=="" || sessionStorage.getItem("userName")==null)
+{
+    location.href = 'page-login.html';
+}
+    window.addEventListener('load', function() {
+
+if(sessionStorage.getItem("userName")=="" || sessionStorage.getItem("userName")==null)
+{
+    location.href = 'page-login.html';
+}
+else
+{
+
+    if(sessionStorage.getItem("userType")=="Manager")
+    {
+        document.getElementById("reportMenu").style.display = "block";
+    }
+    else if(sessionStorage.getItem("userType")=="Admin")
+    {
+        document.getElementById("manageUserMenu").style.display = "block";
+        document.getElementById("reportMenu").style.display = "block";
+    }
+
+}
+})
+</script>
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    </li>
+                    <li id="manageUserMenu" style="display:none;">
+                        <a href="manageuser.html"> <i class="menu-icon fa fa-users"></i>Manage User </a>
+                    </li>
+                    <li>
+                        <a href="category.html"> <i class="menu-icon fa fa-tasks"></i>Category </a>
+                    </li>
+                    <li>
+                        <a href="product.html"> <i class="menu-icon fad fa-product-hunt"></i>Product </a>
+                    </li>
+                    <li>
+                        <a href="Purchase.html"> <i class="menu-icon fa fa-cart-arrow-down"></i>Purchase </a>
+                    </li>
+                    <li>
+                        <a href="sale.html"> <i class="menu-icon fa fa-archive"></i>Sale </a>
+                    </li>
+                    <li>
+                        <a href="Email.html"> <i class="menu-icon fa fa-envelope-square"></i>Send Mail </a>
+                    </li>
+
+                    <li class="menu-item-has-children dropdown" id="reportMenu"  style="display:none;">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="menu-icon fa fa-area-chart"></i>Reports</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="PurchaseReport.html">Purchase Report</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="SalesReport.html">Sales Report</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
+            <div class="top-right">
+                <div class="header-menu">
+
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+
+                            <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- Header-->
+
+        <div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>Purchase</strong> Header
+                            </div>
+                            <div class="card-body card-block">
+                                <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label class=" form-control-label">Date</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <p id="todayDate" name="Date" class="form-control-static">Date</p>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                          <label for="text-input" class=" form-control-label">Invoice No</label>
+                                        </div>
+                                        <div class="col-12 col-md-4">
+                                          <div class="input-group-addon" id="pInvoiceNo">.</div>
+                                        </div>
+                                        <div class="col-12 col-md-5">
+                                          <input id="invoiceNo" type="text" name="Invoice" placeholder="Invoice" class="form-control">
+                                          <span class="help-block" id="invoiceError"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="select" class=" form-control-label">Supplier</label></div>
+                                        <div class="col-12 col-md-5">
+                                            <select id="supplierSelection" class="form-control">
+                                                <option value="">Please select</option>
+                                            </select>
+                                            <span class="help-block"></span>
+                                        </div>
+                                        <div class="col col-md-4"><button type="button" id="addSupplierBtn" class="btn btn-primary btn-sm active"  style="margin-top:5px;">Add Supplier</button></div>
+
+                                        <!-- Modal -->
+                                        <div id="addSupplierModal" class="addSupplierModal">
+                                          <!-- Modal content -->
+                                        <div class="addSupplierModal-content">
+                                          <form class="" action="index.html" method="post">
+                                            <span class="addSupplierModalclose">&times;</span>
+
+                                            <div class="row form-group">
+                                                <div class="col col-md-12" style="text-align:center;">
+                                                  <label for="select" >New Supplier</label>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                  <label for="select" class=" form-control-label">Name</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="fullName" name="fullName" placeholder="" class="form-control" required>
+                                                    <span class="help-block"></span>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                  <label for="select" class=" form-control-label">Phone</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="phone" name="phone" placeholder="" class="form-control" required>
+                                                    <span class="help-block"></span>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                  <label for="select" class=" form-control-label">Address</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="address" name="address" placeholder="" class="form-control" required>
+                                                    <span class="help-block"></span>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                  <label for="select" class=" form-control-label">Acc. No</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="accNumber" name="accNumber" placeholder="" class="form-control" required>
+                                                    <span class="help-block"></span>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                  <label for="select" class=" form-control-label">Balance</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="number" id="balance" name="balance" value="0" placeholder="" class="form-control" min="0" required>
+                                                    <span class="help-block"></span>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-12">
+                                                  <button type="button" class="btn btn-primary btn-sm active" id="addSupplier" style="width:100%; margin-left:0px;">Add Supplier</button>
+                                                </div>
+                                            </div>
+                                          </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div id="productSelection" class="card" style="visibility:hidden;">
+                            <div class="card-header">
+                                <strong>Product</strong> Selection
+                            </div>
+                            <div class="card-body card-block">
+                                <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                          <label for="select" class=" form-control-label">Category</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <select id="categorySelection" class="form-control">
+                                                <option value="">Please select a Category</option>
+                                            </select>
+                                            <span class="help-block"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="select" class=" form-control-label">Product</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <select id="productSelections" class="form-control">
+                                              <option value="">Please select a Product</option>
+                                            </select>
+                                            <span class="help-block"></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="purchaseDetails" class="col-lg-6" style="visibility:hidden;">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>Purchase</strong> Details
+                            </div>
+                            <div class="card-body card-block">
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                      <label for="hf-email" class=" form-control-label">A Quantity</label>
+                                    </div>
+                                    <div class="col-12 col-md-5">
+                                      <p id="aQuantity" class="form-control-static" style="text-align:left; font-weight:bold;">Quantity</p>
+                                      <span class="help-block"></span>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                      <p class="form-control-static">Unit</p>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                      <label for="hf-email" class=" form-control-label">Quantity</label>
+                                    </div>
+                                    <div class="col-12 col-md-5">
+                                      <input type="number" id="quantity" placeholder="Purchase Quantity" class="form-control" min="0" required>
+                                      <span class="help-block" id="errorForQuantity" style="color:red;"></span>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                      <p class="form-control-static">Unit</p>
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                      <label for="hf-email" class=" form-control-label">P Unit Price</label>
+                                    </div>
+                                    <div class="col-12 col-md-5">
+                                      <p id="pUnitPrice" class="form-control-static" style="text-align:left; font-weight:bold;">Total Price</p>
+                                      <span class="help-block"></span>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                      <p class="form-control-static">Taka (Tk)</p>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                      <label for="hf-email" class=" form-control-label">Unit Price</label>
+                                    </div>
+                                    <div class="col-12 col-md-5">
+                                      <input type="number" id="unitPrice"  placeholder="Purchase Quantity" class="form-control" min="0" required>
+                                      <span class="help-block" id="errorForUnitPrice" style="color:red;"></span>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                      <p class="form-control-static">Taka (Tk)</p>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                      <label for="hf-email" class=" form-control-label">Expire Date</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                      <input type="date" id="expDate" class="form-control" required>
+                                      <span class="help-block" id="errorForExpDate" style="color:red;"></span>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                      <label for="hf-email" class=" form-control-label">Total Price</label>
+                                    </div>
+                                    <div class="col-12 col-md-5">
+                                      <p class="form-control-static" id="totalPrice">Total Price</p>
+                                      <span class="help-block"></span>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                      <p class="form-control-static">Taka (Tk)</p>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                      <label for="hf-email" class=" form-control-label">Remarks</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                      <input type="text" id="remarks" placeholder="Remarks" class="form-control">
+                                      <span class="help-block"></span>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                  <div class="col col-md-4">
+                                  </div>
+                                  <div class="col-12 col-md-8">
+                                    <button id="submitBtn"  type="submit" class="btn btn-primary btn-sm active" style="width:100%; margin-left:-10px;">Submit</button>
+                                    <span id="createMsg" style="color:green; font-weight:bold; text-align:center;"></span>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+
+        </div><!-- .animated -->
+    </div><!-- .content -->
+
+    <div class="clearfix"></div>
+
+</div><!-- /#right-panel -->
+
+<!-- <div class="wrapper">
+			<div class="btn_grp">
+				<div class="btn btn_info">Info</div>
+			</div>
+	</div> -->
+
+<!-- Right Panel -->
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="assets/js/purchase/mainscript.js"></script>
+<!-- <script src="assets/js/purchase/alert.js"></script> -->
+<script type="text/javascript">
+  var date=new Date().toLocaleDateString();
+  $("#todayDate").html(date);
+  date=date.split("/");
+  $("#pInvoiceNo").html("invo."+date[1]+"."+date[0]+"."+date[2].substring(2, 4)+"_");
+  //
+  // document.onkeydown = function(e) {
+  // if(event.keyCode == 123) {
+  //    return false;
+  // }
+  // if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+  //    return false;
+  // }
+  // if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+  //    return false;
+  // }
+  // if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+  //    return false;
+  // }
+  // if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+  //    return false;
+  // }
+// }
+</script>
+</body>
+</html>
